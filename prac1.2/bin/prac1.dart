@@ -58,7 +58,65 @@ void main() {
   // }
   // print(averageT);
   // print(sortList(averageT));
+
+  // Task 5
+
+//   Random random = new Random();
+
+//   var temperature = {
+//     "January" : List.generate(30, (int index) => random.nextInt(60) - 30),
+//     "February" : List.generate(30, (int index) => random.nextInt(60) - 30),
+//     "March" : List.generate(30, (int index) => random.nextInt(60) - 30),
+//     "April" : List.generate(30, (int index) => random.nextInt(60) - 30),
+//     "May" : List.generate(30, (int index) => random.nextInt(60) - 30),
+//     "June" : List.generate(30, (int index) => random.nextInt(60) - 30),
+//     "July" : List.generate(30, (int index) => random.nextInt(60) - 30),
+//     "August" : List.generate(30, (int index) => random.nextInt(60) - 30),
+//     "September" : List.generate(30, (int index) => random.nextInt(60) - 30),
+//     "October" : List.generate(30, (int index) => random.nextInt(60) - 30),
+//     "November" : List.generate(30, (int index) => random.nextInt(60) - 30),
+//     "December" : List.generate(30, (int index) => random.nextInt(60) - 30)
+//   };
   
+//   Map averageT = averageTemperatureMap(temperature);
+
+//   print("Список средних температур - ${averageT}");
+//   print("Отсортированный список средних температур - ${sortMap(averageT)}");
+// }
+
+
+
+// Extra
+
+Map averageTemperatureMap(Map temperature){
+  Map average = {};
+  for (var item in temperature.entries){
+    int temp = 0;
+    for (int i in item.value){
+      temp += i;
+    }
+    average[item.key] = (temp / item.value.length).round();
+  }
+  return average;
+}
+
+Map sortMap(Map map){
+  bool isSorted = false;
+  Map newMap = {};
+
+  while (map.length > 0){
+    int minValue = 30;
+    String nameMinValue = '';
+    for (var item in map.entries){
+      if (item.value < minValue){
+        minValue = item.value;
+        nameMinValue = item.key;
+      }
+    }
+    newMap[nameMinValue] = minValue;
+    map.remove(nameMinValue);
+  }
+  return newMap;
 }
 
 List<int> averageTemperature(List<List<int>> temperature){
