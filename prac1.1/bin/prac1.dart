@@ -58,7 +58,7 @@ void main() {
   //   }
   //   if (word.length > maxLength && word.length != 0){
   //     maxLength = word.length;
-  //     indexMin = i;
+  //     indexMax = i;
   //   }
   //   i++;
   // }
