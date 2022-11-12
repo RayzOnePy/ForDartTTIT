@@ -2,7 +2,6 @@ import 'dart:io';
 import 'dart:math';
 
 void main() {
-
   // TASK 1
 
   // List<int> randomNums = [];
@@ -25,11 +24,15 @@ void main() {
   // int multiply = 1;
   // int counterNums = 0;
   // int num = 1;
-  // while (num != 0){
-  //   num = int.parse(stdin.readLineSync()!);
+  // while (num != 0) {
+  //   try {
+  //     num = int.parse(stdin.readLineSync()!);
+  //   } catch (e) {
+  //     num = 0;
+  //   }
   //   sum += num;
   //   counterNums++;
-  //   if (num != 0){
+  //   if (num != 0) {
   //     multiply *= num;
   //   }
   // }
@@ -65,21 +68,24 @@ void main() {
   // print("Самое короткое слово - ${words[indexMin]}, самое длинное слово - ${words[indexMax]}");
 
   // TASK 4
-
-  // print("Введите начало диапазона ");
-  // int a = int.parse(stdin.readLineSync()!);
-  // print("Введите конец диапазона ");
-  // int b = int.parse(stdin.readLineSync()!);
-
   // Random random = new Random();
   // List<int> randomNums = [];
 
-  // for (int i = 0; i < 25; i++){
-  //   randomNums.add(random.nextInt(b - a) + a);
-  // }
+  // try {
+  //   print("Введите начало диапазона ");
+  //   int a = int.parse(stdin.readLineSync()!);
+  //   print("Введите конец диапазона ");
+  //   int b = int.parse(stdin.readLineSync()!);
 
-  // for (int i = 0; i < randomNums.length; i++){
-  //   stdout.write("${randomNums[i]} ");
+  //   for (int i = 0; i < 25; i++) {
+  //     randomNums.add(random.nextInt(b - a) + a);
+  //   }
+
+  //   for (int i = 0; i < randomNums.length; i++) {
+  //     stdout.write("${randomNums[i]} ");
+  //   }
+  // } catch (e) {
+  //   print("Возникла ошибка ${e}");
   // }
 
   // TASK 5
@@ -91,5 +97,4 @@ void main() {
   // text = temp.join(" ");
   // print(temp.length - 2);
   // print(text);
-
 }
